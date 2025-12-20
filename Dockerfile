@@ -11,3 +11,5 @@ COPY . .
 EXPOSE 3000
 
 CMD ["node", "src/app.js"]
+
+FROM node:20-alpine
