@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Dr. Ahmad",
+    "specialty": "Dentist",
+    "phone": "0599876543"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Mohammed",
+    "specialty": "Surgen",
+    "phone": "0599876543"
+  }
+]
