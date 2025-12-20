@@ -1,3 +1,5 @@
+// Validate appointment date is not in the past
+
 function isPositiveInteger(value) {
   return Number.isInteger(value) && value > 0;
 }
