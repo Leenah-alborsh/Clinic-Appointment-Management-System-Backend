@@ -8,3 +8,5 @@ This was solved by using a proper WORKDIR and ensuring all required files were c
 Writing clear and meaningful commit messages is essential for professional development.
 Each commit should represent a logical step (structure, docker setup, documentation, fixes),
 which makes the project easier to review and maintain.
+
+- Learned how port conflicts can prevent Docker containers from starting.
