@@ -4,6 +4,7 @@ A professional Backend REST API for managing clinic patients, doctors, and appoi
 Built with Node.js, Express, clean architecture, and Docker support.
 
 Features:
+
 - Manage Patients
 - Manage Doctors
 - Book & cancel Appointments
@@ -16,34 +17,35 @@ Features:
 Project Architecture:
 src
 ├── controllers
-│   ├── patients.controller.js
-│   ├── doctors.controller.js
-│   └── appointments.controller.js
+│ ├── patients.controller.js
+│ ├── doctors.controller.js
+│ └── appointments.controller.js
 │
 ├── services
-│   ├── patients.service.js
-│   ├── doctors.service.js
-│   └── appointments.service.js
+│ ├── patients.service.js
+│ ├── doctors.service.js
+│ └── appointments.service.js
 │
 ├── routes
-│   ├── patients.routes.js
-│   ├── doctors.routes.js
-│   └── appointments.routes.js
+│ ├── patients.routes.js
+│ ├── doctors.routes.js
+│ └── appointments.routes.js
 │
 ├── validators
-│   └── appointment.validator.js
+│ └── appointment.validator.js
 │
 ├── data
-│   ├── patients.json
-│   ├── doctors.json
-│   └── appointments.json
+│ ├── patients.json
+│ ├── doctors.json
+│ └── appointments.json
 │
 ├── utils
-│   └── fileHandler.js
+│ └── fileHandler.js
 │
 └── app.js
 
 Technologies Used:
+
 - Node.js
 - Express.js
 - REST API
@@ -53,41 +55,41 @@ Technologies Used:
 API Endpoints:
 
 - Patients
-Method	Endpoint	Description
-GET	/patients	Get all patients
-POST	/patients	Add a new patient
+  Method Endpoint Description
+  GET /patients Get all patients
+  POST /patients Add a new patient
 
 POST /patients
 {
-  "name": "Leenah",
-  "age": 22,
-  "phone": "0591234567"
+"name": "Leenah",
+"age": 22,
+"phone": "0591234567"
 }
 
 - Doctors
-Method	Endpoint	Description
-GET	/doctors	Get all doctors
-POST	/doctors	Add a new doctor
+  Method Endpoint Description
+  GET /doctors Get all doctors
+  POST /doctors Add a new doctor
 
 POST /doctors
 {
-  "name": "Dr. Ahmad",
-  "specialty": "Dentist",
-  "phone": "0599876543"
+"name": "Dr. Ahmad",
+"specialty": "Dentist",
+"phone": "0599876543"
 }
 
 - Appointments
-Method	Endpoint	Description
-GET	/appointments	Get all appointments
-POST	/appointments	Book an appointment
-DELETE	/appointments/:id	Cancel appointment
+  Method Endpoint Description
+  GET /appointments Get all appointments
+  POST /appointments Book an appointment
+  DELETE /appointments/:id Cancel appointment
 
 POST /appointments
 {
-  "patientId": 1,
-  "doctorId": 1,
-  "date": "2026-01-20",
-  "time": "12:00"
+"patientId": 1,
+"doctorId": 1,
+"date": "2026-01-20",
+"time": "12:00"
 }
 
 Business Rules:
@@ -104,7 +106,6 @@ docker build -t clinic-api .
 2️- Run Container
 docker run -p 3000:3000 clinic-api
 
-
 Server will run on:
 
 http://localhost:3000
@@ -114,6 +115,7 @@ npm install
 node src/app.js
 
 Why This Project Is Professional?
+
 - Clean separation of concerns
 - Business logic isolated in services
 - Validation layer for data integrity
@@ -125,8 +127,13 @@ Author:
 Leenah Alborsh
 Full-stack Developer | Software Development Student
 
-Future Improvements: 
+Future Improvements:
+
 - Authentication (JWT)
 - Database integration (MongoDB / PostgreSQL)
 - Unit testing
 - Role-based access
+
+Makefile :
+This project includes a Makefile to simplify Docker commands.
+Note: On Windows, `make` requires additional installation (e.g. via WSL or Git Bash).
