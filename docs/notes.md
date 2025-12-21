@@ -12,3 +12,4 @@ The most important lesson I learned is that Git commits should clearly reflect r
 Writing meaningful commit messages and using pull requests made the project easier to follow and more professional.
 
 This assignment showed me how GitHub is used to document development steps, not just store code.
+This assignment showed me how GitHub is used to document development steps, not just store code.
