@@ -1,9 +1,11 @@
-Clinic Appointment API
+# Clinic Appointment API
 
 A professional Backend REST API for managing clinic patients, doctors, and appointments.
 Built with Node.js, Express, clean architecture, and Docker support.
 
-Features:
+--------------------------------------------------
+
+FEATURES
 
 - Manage Patients
 - Manage Doctors
@@ -14,37 +16,42 @@ Features:
 - JSON file persistence (no database required)
 - Dockerized for easy deployment
 
-Project Architecture:
+--------------------------------------------------
+
+PROJECT ARCHITECTURE
+
 src
 ├── controllers
-│ ├── patients.controller.js
-│ ├── doctors.controller.js
-│ └── appointments.controller.js
+│   ├── patients.controller.js
+│   ├── doctors.controller.js
+│   └── appointments.controller.js
 │
 ├── services
-│ ├── patients.service.js
-│ ├── doctors.service.js
-│ └── appointments.service.js
+│   ├── patients.service.js
+│   ├── doctors.service.js
+│   └── appointments.service.js
 │
 ├── routes
-│ ├── patients.routes.js
-│ ├── doctors.routes.js
-│ └── appointments.routes.js
+│   ├── patients.routes.js
+│   ├── doctors.routes.js
+│   └── appointments.routes.js
 │
 ├── validators
-│ └── appointment.validator.js
+│   └── appointment.validator.js
 │
 ├── data
-│ ├── patients.json
-│ ├── doctors.json
-│ └── appointments.json
+│   ├── patients.json
+│   ├── doctors.json
+│   └── appointments.json
 │
 ├── utils
-│ └── fileHandler.js
+│   └── fileHandler.js
 │
 └── app.js
 
-Technologies Used:
+--------------------------------------------------
+
+TECHNOLOGIES USED
 
 - Node.js
 - Express.js
@@ -52,88 +59,150 @@ Technologies Used:
 - Docker
 - File-based storage (JSON)
 
-API Endpoints:
+--------------------------------------------------
 
-- Patients
-  Method Endpoint Description
-  GET /patients Get all patients
-  POST /patients Add a new patient
+API ENDPOINTS
 
-POST /patients
+PATIENTS
+- GET /patients        → Get all patients
+- POST /patients       → Add a new patient
+
+Example:
 {
-"name": "Leenah",
-"age": 22,
-"phone": "0591234567"
+  "name": "Leenah",
+  "age": 22,
+  "phone": "0591234567"
 }
 
-- Doctors
-  Method Endpoint Description
-  GET /doctors Get all doctors
-  POST /doctors Add a new doctor
+DOCTORS
+- GET /doctors         → Get all doctors
+- POST /doctors        → Add a new doctor
 
-POST /doctors
+Example:
 {
-"name": "Dr. Ahmad",
-"specialty": "Dentist",
-"phone": "0599876543"
+  "name": "Dr. Ahmad",
+  "specialty": "Dentist",
+  "phone": "0599876543"
 }
 
-- Appointments
-  Method Endpoint Description
-  GET /appointments Get all appointments
-  POST /appointments Book an appointment
-  DELETE /appointments/:id Cancel appointment
+APPOINTMENTS
+- GET /appointments            → Get all appointments
+- POST /appointments           → Book an appointment
+- DELETE /appointments/:id     → Cancel appointment
 
-POST /appointments
+Example:
 {
-"patientId": 1,
-"doctorId": 1,
-"date": "2026-01-20",
-"time": "12:00"
+  "patientId": 1,
+  "doctorId": 1,
+  "date": "2026-01-20",
+  "time": "12:00"
 }
 
-Business Rules:
+--------------------------------------------------
+
+BUSINESS RULES
 
 - Appointment date cannot be in the past
 - Time must be in HH:mm format
-- Patient & Doctor must exist
+- Patient and Doctor must exist
 - A doctor cannot have two appointments at the same time
 
-Run with Docker
-1️- Build Image
+--------------------------------------------------
+
+RUN WITH DOCKER
+
+Make sure Docker is installed and running.
+
+1) Build the image
 docker build -t clinic-api .
 
-2️- Run Container
+2) Run the container
 docker run -p 3000:3000 clinic-api
 
 Server will run on:
-
 http://localhost:3000
 
-Run Locally (Without Docker):
-npm install
-node src/app.js
+--------------------------------------------------
 
-Why This Project Is Professional?
+RUN WITH DOCKER COMPOSE
+
+docker compose up -d
+
+--------------------------------------------------
+
+STOPPING THE CONTAINER AND CLEANUP
+
+docker ps
+docker stop <container_id>
+docker rm <container_id>
+
+--------------------------------------------------
+
+CONFIGURATION
+
+- Default Port: 3000
+- No environment variables are required.
+
+--------------------------------------------------
+
+HOW TO TEST THE API
+
+You can test the API using a browser or Postman:
+
+- GET http://localhost:3000/patients
+- GET http://localhost:3000/doctors
+- GET http://localhost:3000/appointments
+- GET http://localhost:3000/health
+
+Successful response:
+{
+  "status": "OK"
+}
+
+--------------------------------------------------
+
+MAKEFILE
+
+This project includes a Makefile to simplify Docker commands.
+
+Available commands:
+- make build
+- make up
+- make down
+- make logs
+
+Note: On Windows, make may require additional installation (e.g. WSL or Git Bash).
+
+--------------------------------------------------
+
+WHY THIS PROJECT IS PROFESSIONAL
 
 - Clean separation of concerns
 - Business logic isolated in services
 - Validation layer for data integrity
 - Production-ready structure
-- Docker support
-- Easy to extend (DB, Auth, JWT, etc.)
+- Docker and Docker Compose support
+- CI workflow with GitHub Actions
+- Easy to extend in the future
 
-Author:
-Leenah Alborsh
-Full-stack Developer | Software Development Student
+--------------------------------------------------
 
-Future Improvements:
+FUTURE IMPROVEMENTS
 
 - Authentication (JWT)
 - Database integration (MongoDB / PostgreSQL)
 - Unit testing
 - Role-based access
 
-Makefile :
-This project includes a Makefile to simplify Docker commands.
-Note: On Windows, `make` requires additional installation (e.g. via WSL or Git Bash).
+--------------------------------------------------
+
+ATTRIBUTION
+
+This project was built from scratch for educational purposes as part of the Operating Systems Lab.
+
+--------------------------------------------------
+
+AUTHOR
+
+Leenah Alborsh  
+Full-stack Developer | Software Development Student
