@@ -149,7 +149,7 @@ _📡 API Endpoints_
 "age": 22,
 "phone": "0591234567"
 }
-
+```
 ---
 
 ### Doctors
@@ -165,7 +165,7 @@ _📡 API Endpoints_
 "specialty": "Dentist",
 "phone": "0599876543"
 }
-
+```
 ---
 
 ### Appointments
@@ -182,7 +182,7 @@ _📡 API Endpoints_
 "date": "2026-01-20",
 "time": "12:00"
 }
-
+```
 ---
 
 _✅ Healthcheck_
@@ -194,7 +194,7 @@ _Example response:_
 {
  "status": "OK"
 }
-````
+```
 
 ---
 
