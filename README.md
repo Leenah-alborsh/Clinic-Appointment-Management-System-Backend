@@ -97,27 +97,28 @@ clinic-appointment-api/
 ## 🐳 Docker Setup
 
 **Build Docker Image**
-bash
+```bash
 docker build -t clinic-api.
-
+```
 _Run Container_
-bash
+```bash
 docker run -p 3000:3000 clinic-api
-
+```
 _Run Using Docker Compose_
-bash
+```bash
 docker compose up -d
-
+```
 _Stop and Clean Up_
-bash
+```bash
 docker compose down
-
+```
 ---
 
 _🛠 Run Locally (Without Docker)_
 
-bash
+```bash
 npm install
+```
 node src/app.js
 
 The application will run on:
@@ -134,12 +135,12 @@ _📡 API Endpoints_
  | GET | /patients | Get all patients | 
  | POST | /patients | Add a new patient |
 
-json
+```json
 {
 "name": "Leenah",
 "age": 22,
 "phone": "0591234567"
-}
+}```
 
 ---
 
@@ -149,12 +150,12 @@ json
  | GET | /doctors | Get all doctors | 
  | POST | /doctors | Add a doctor |
 
-json
+```json
 {
 "name": "Dr. Ahmad",
 "specialty": "Dentist",
 "phone": "0599876543"
-}
+}```
 
 ---
 
@@ -165,13 +166,13 @@ json
 | POST | /appointments | Book appointment | 
 | DELETE | /appointments/:id | Cancel appointment |
 
-json
+```json
 {
 "patientId": 1,
 "doctorId": 1,
 "date": "2026-01-20",
 "time": "12:00"
-}
+}```
 
 ---
 
@@ -180,11 +181,11 @@ _✅ Healthcheck_
 _GET_ `/health`
 
 _Example response:_
-json
+```json
 {
-[2:16 PM, 12/22/2025] Microsoft Copilot: "status": "OK"
+ "status": "OK"
 }
-
+```
 ---
 
 ## ⚙ Configuration
