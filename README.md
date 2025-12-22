@@ -164,6 +164,7 @@ json
 | GET | /appointments | Get all appointments | 
 | POST | /appointments | Book appointment | 
 | DELETE | /appointments/:id | Cancel appointment |
+
 json
 {
 "patientId": 1,
