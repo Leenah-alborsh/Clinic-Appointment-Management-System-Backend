@@ -111,9 +111,9 @@ The application will run on:
 http://localhost:3000
 
 📡 API Endpoints
-Patients
-```md
-| Method | Endpoint   | Description        |
+###Patients
+
+| Method | Endpoint  | Description        |
 |--------|-----------|--------------------|
 | GET    | /patients | Get all patients   |
 | POST   | /patients | Add a new patient  |
@@ -127,12 +127,13 @@ Example request body:
   "phone": "0591234567"
 }
 
-Doctors
-```md
-| Method | Endpoint  | Description       |
-|--------|----------|-------------------|
-| GET    | /doctors | Get all doctors   |
-| POST   | /doctors | Add a doctor      |
+### Doctors
+
+| Method | Endpoint   | Description       |
+|--------|------------|-------------------|
+| GET    | /doctors   | Get all doctors   |
+| POST   | /doctors   | Add a doctor      |
+
 
 ```json
 {
@@ -141,13 +142,14 @@ Doctors
   "phone": "0599876543"
 }
 
-Appointments
-```md
-| Method | Endpoint   | Description        |
-|--------|-----------|--------------------|
-| GET    | /appointments | Get all appointments   |
-| POST   | /appointments | Book appointment  |
-| DELETE   | /appointments/:id	| Cancel appointment  |
+### Appointments
+
+| Method | Endpoint            | Description            |
+|--------|---------------------|------------------------|
+| GET    | /appointments       | Get all appointments   |
+| POST   | /appointments       | Book appointment       |
+| DELETE | /appointments/:id   | Cancel appointment     |
+
 
 
 
@@ -168,11 +170,12 @@ GET /health
   "status": "OK"
 }
 
-⚙ Configuration
-```md
-| Variable | Description   | 
-|--------|-----------|
-| PORT    | Application port (default: 3000) |
+## ⚙ Configuration
+
+| Variable | Description                          |
+|----------|--------------------------------------|
+| PORT     | Application port (default: 3000)     |
+
 
 	
 No environment variables are required.
