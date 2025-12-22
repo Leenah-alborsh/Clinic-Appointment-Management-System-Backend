@@ -18,36 +18,38 @@ FEATURES
 
 --------------------------------------------------
 
-PROJECT ARCHITECTURE
+ Project Architecture
 
-src
-├── controllers
+```text
+src/
+├── controllers/
 │   ├── patients.controller.js
 │   ├── doctors.controller.js
 │   └── appointments.controller.js
 │
-├── services
+├── services/
 │   ├── patients.service.js
 │   ├── doctors.service.js
 │   └── appointments.service.js
 │
-├── routes
+├── routes/
 │   ├── patients.routes.js
 │   ├── doctors.routes.js
 │   └── appointments.routes.js
 │
-├── validators
+├── validators/
 │   └── appointment.validator.js
 │
-├── data
+├── data/
 │   ├── patients.json
 │   ├── doctors.json
 │   └── appointments.json
 │
-├── utils
+├── utils/
 │   └── fileHandler.js
 │
 └── app.js
+
 
 --------------------------------------------------
 
