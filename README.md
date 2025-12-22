@@ -53,7 +53,7 @@ The project follows a **clean layered architecture** and demonstrates a realisti
 
 ## 📁 Repository Structure
 
-
+```txt
 clinic-appointment-api/
 ├── src/
 │   ├── controllers/
