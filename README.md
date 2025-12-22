@@ -1,98 +1,154 @@
 # Clinic Appointment API
 
-A professional Backend REST API for managing clinic patients, doctors, and appointments.
-Built with Node.js, Express, clean architecture, and Docker support.
+A production-ready RESTful backend service for managing clinic patients, doctors, and appointment scheduling.  
+Designed with clean architecture principles, real-world business rules, and fully Dockerized for consistent deployment.
 
---------------------------------------------------
+---
 
-FEATURES
+## Project Description
 
-- Manage Patients
-- Manage Doctors
-- Book & cancel Appointments
-- Prevent double booking for doctors
-- Strong input validation (date, time, IDs)
-- Clean architecture (Routes → Controllers → Services)
-- JSON file persistence (no database required)
-- Dockerized for easy deployment
+**Clinic Appointment API** is a professional backend system that enables clinics to manage their daily operations digitally.
 
---------------------------------------------------
+It allows:
 
- Project Architecture
+- Managing patients and doctors
+- Booking and canceling appointments
+- Enforcing critical business rules such as preventing double bookings
+- Validating appointment data
 
-```text
-src/
-├── controllers/
-│   ├── patients.controller.js
-│   ├── doctors.controller.js
-│   └── appointments.controller.js
-│
-├── services/
-│   ├── patients.service.js
-│   ├── doctors.service.js
-│   └── appointments.service.js
-│
-├── routes/
-│   ├── patients.routes.js
-│   ├── doctors.routes.js
-│   └── appointments.routes.js
-│
-├── validators/
-│   └── appointment.validator.js
-│
-├── data/
-│   ├── patients.json
-│   ├── doctors.json
-│   └── appointments.json
-│
-├── utils/
-│   └── fileHandler.js
-│
-└── app.js
+The project follows a **clean layered architecture** and demonstrates a realistic **Docker & GitHub workflow** suitable for production-level backend services.
 
+---
 
---------------------------------------------------
+## Key Features
 
-TECHNOLOGIES USED
+- Patient management (create & list patients)
+- Doctor management with specialties
+- Appointment booking and cancellation
+- Prevents double booking for doctors
+- Input validation for dates, times, and IDs
+- Clean layered architecture (Routes → Controllers → Services)
+- File-based persistence using JSON
+- Dockerized with multi-stage build
+- Healthcheck endpoint for container monitoring
+- Docker Compose support
+- CI pipeline using GitHub Actions
+- Makefile for simplified Docker commands
+
+---
+
+## Technology Stack
 
 - Node.js
 - Express.js
 - REST API
-- Docker
+- Docker & Docker Compose
+- GitHub Actions (CI)
+- Makefile
 - File-based storage (JSON)
 
---------------------------------------------------
+---
 
-API ENDPOINTS
+## Repository Structure
 
-PATIENTS
-- GET /patients        → Get all patients
-- POST /patients       → Add a new patient
+````txt
+clinic-appointment-api/
+├── src/
+│   ├── controllers/
+│   │   ├── patients.controller.js
+│   │   ├── doctors.controller.js
+│   │   └── appointments.controller.js
+│   ├── services/
+│   │   ├── patients.service.js
+│   │   ├── doctors.service.js
+│   │   └── appointments.service.js
+│   ├── routes/
+│   │   ├── patients.routes.js
+│   │   ├── doctors.routes.js
+│   │   └── appointments.routes.js
+│   ├── validators/
+│   │   └── appointment.validator.js
+│   ├── data/
+│   │   ├── patients.json
+│   │   ├── doctors.json
+│   │   └── appointments.json
+│   ├── utils/
+│   │   └── fileHandler.js
+│   └── app.js
+├── docs/
+│   ├── screenshots/
+│   └── notes.md
+├── .github/workflows/
+│   └── docker-ci.yml
+├── Dockerfile
+├── docker-compose.yml
+├── Makefile
+├── .dockerignore
+├── .gitignore
+├── README.md
+└── LICENSE
 
-Example:
+🐳 Docker Setup
+Build Docker Image
+docker build -t clinic-api .
+
+Run Container
+docker run -p 3000:3000 clinic-api
+
+Run Using Docker Compose
+docker compose up -d
+
+Stop and Clean Up
+docker compose down
+
+🛠 Run Locally (Without Docker)
+npm install
+node src/app.js
+
+
+The application will run on:
+
+http://localhost:3000
+
+📡 API Endpoints
+Patients
+| Method | Endpoint   | Description        |
+|--------|-----------|--------------------|
+| GET    | /patients | Get all patients   |
+| POST   | /patients | Add a new patient  |
+
+
+Example request body:
+```json
 {
   "name": "Leenah",
   "age": 22,
   "phone": "0591234567"
 }
 
-DOCTORS
-- GET /doctors         → Get all doctors
-- POST /doctors        → Add a new doctor
+Doctors
+| Method | Endpoint  | Description       |
+|--------|----------|-------------------|
+| GET    | /doctors | Get all doctors   |
+| POST   | /doctors | Add a doctor      |
 
-Example:
+```json
 {
   "name": "Dr. Ahmad",
   "specialty": "Dentist",
   "phone": "0599876543"
 }
 
-APPOINTMENTS
-- GET /appointments            → Get all appointments
-- POST /appointments           → Book an appointment
-- DELETE /appointments/:id     → Cancel appointment
+Appointments
+| Method | Endpoint   | Description        |
+|--------|-----------|--------------------|
+| GET    | /appointments | Get all appointments   |
+| POST   | /appointments | Book appointment  |
+| DELETE   | /appointments/:id	| Cancel appointment  |
 
-Example:
+
+
+  ```json
 {
   "patientId": 1,
   "doctorId": 1,
@@ -100,111 +156,66 @@ Example:
   "time": "12:00"
 }
 
---------------------------------------------------
+ Healthcheck
+ ```json
+GET /health
 
-BUSINESS RULES
-
-- Appointment date cannot be in the past
-- Time must be in HH:mm format
-- Patient and Doctor must exist
-- A doctor cannot have two appointments at the same time
-
---------------------------------------------------
-
-RUN WITH DOCKER
-
-Make sure Docker is installed and running.
-
-1) Build the image
-docker build -t clinic-api .
-
-2) Run the container
-docker run -p 3000:3000 clinic-api
-
-Server will run on:
-http://localhost:3000
-
---------------------------------------------------
-
-RUN WITH DOCKER COMPOSE
-
-docker compose up -d
-
---------------------------------------------------
-
-STOPPING THE CONTAINER AND CLEANUP
-
-docker ps
-docker stop <container_id>
-docker rm <container_id>
-
---------------------------------------------------
-
-CONFIGURATION
-
-- Default Port: 3000
-- No environment variables are required.
-
---------------------------------------------------
-
-HOW TO TEST THE API
-
-You can test the API using a browser or Postman:
-
-- GET http://localhost:3000/patients
-- GET http://localhost:3000/doctors
-- GET http://localhost:3000/appointments
-- GET http://localhost:3000/health
-
-Successful response:
+```json
 {
   "status": "OK"
 }
 
---------------------------------------------------
+⚙ Configuration
+| Variable | Description   | 
+|--------|-----------|
+| PORT    | Application port (default: 3000) |
 
-MAKEFILE
+	
+No environment variables are required.
 
-This project includes a Makefile to simplify Docker commands.
+🧪 Testing
 
-Available commands:
-- make build
-- make up
-- make down
-- make logs
+Browser
 
-Note: On Windows, make may require additional installation (e.g. WSL or Git Bash).
+Postman
 
---------------------------------------------------
+cURL
 
-WHY THIS PROJECT IS PROFESSIONAL
+Example:
+```json
+http://localhost:3000/patients
 
-- Clean separation of concerns
-- Business logic isolated in services
-- Validation layer for data integrity
-- Production-ready structure
-- Docker and Docker Compose support
-- CI workflow with GitHub Actions
-- Easy to extend in the future
+📄 Technical Notes
 
---------------------------------------------------
+Technical notes and challenges are documented in:
 
-FUTURE IMPROVEMENTS
+```json
+docs/notes.md
 
-- Authentication (JWT)
-- Database integration (MongoDB / PostgreSQL)
-- Unit testing
-- Role-based access
 
---------------------------------------------------
+Includes:
 
-ATTRIBUTION
+Biggest Docker issue faced and solution
 
-This project was built from scratch for educational purposes as part of the Operating Systems Lab.
+Most important Git/GitHub lesson learned
 
---------------------------------------------------
+👩‍💻 Author
 
-AUTHOR
+Leenah Alborsh
+Software Development Student
+Backend | Full-Stack Developer
 
-Leenah Alborsh  
-Full-stack Developer | Software Development Student
+🔮 Future Improvements
+
+Authentication (JWT)
+
+Database integration (MongoDB / PostgreSQL)
+
+Unit & integration testing
+
+Role-based access control
+
+📜 License
+
+This project is licensed under the MIT License.
+````
