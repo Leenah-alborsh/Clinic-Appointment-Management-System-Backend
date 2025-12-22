@@ -1,5 +1,6 @@
-[2:16 PM, 12/22/2025] Microsoft Copilot: 
+[2:16 PM, 12/22/2025] Microsoft Copilot:
 markdown
+
 # 🏥 Clinic Appointment API
 
 A production-ready RESTful backend service for managing clinic patients, doctors, and appointment scheduling.
@@ -91,7 +92,6 @@ clinic-appointment-api/
 └── LICENSE
 ```
 
-
 ---
 
 ## 🐳 Docker Setup
@@ -100,104 +100,96 @@ clinic-appointment-api/
 bash
 docker build -t clinic-api.
 
-
-*Run Container*
+_Run Container_
 bash
 docker run -p 3000:3000 clinic-api
 
-
-*Run Using Docker Compose*
+_Run Using Docker Compose_
 bash
 docker compose up -d
 
-
-*Stop and Clean Up*
+_Stop and Clean Up_
 bash
 docker compose down
 
-
 ---
 
-*🛠 Run Locally (Without Docker)*
+_🛠 Run Locally (Without Docker)_
 
 bash
 npm install
 node src/app.js
 
-
 The application will run on:
-
 
 http://localhost:3000
 
-
 ---
 
-*📡 API Endpoints*
+_📡 API Endpoints_
 
-*👤 Patients*
+### Patients
+ | Method | Endpoint | Description | 
+ |--------|-----------|--------------------| 
+ | GET | /patients | Get all patients | 
+ | POST | /patients | Add a new patient |
 
-
-
-MethodEndpointDescriptionGET/patientsGet all patientsPOST/patientsAdd a new patient *Example request body:*
 json
 {
-  "name": "Leenah",
-  "age": 22,
-  "phone": "0591234567"
+"name": "Leenah",
+"age": 22,
+"phone": "0591234567"
 }
-
 
 ---
 
-*🩺 Doctors*
+### Doctors
+ | Method | Endpoint | Description | 
+ | ------ | -------- | --------------- | 
+ | GET | /doctors | Get all doctors | 
+ | POST | /doctors | Add a doctor |
 
-
-
-MethodEndpointDescriptionGET/doctorsGet all doctorsPOST/doctorsAdd a doctor *Example request body:*
 json
 {
-  "name": "Dr. Ahmad",
-  "specialty": "Dentist",
-  "phone": "0599876543"
+"name": "Dr. Ahmad",
+"specialty": "Dentist",
+"phone": "0599876543"
 }
-
 
 ---
 
-*📅 Appointments*
-
-
-
-MethodEndpointDescriptionGET/appointmentsGet all appointmentsPOST/appointmentsBook appointmentDELETE/appointments/:idCancel appointment *Example request body:*
+### Appointments 
+| Method | Endpoint | Description | 
+|--------|---------------------|------------------------| 
+| GET | /appointments | Get all appointments | 
+| POST | /appointments | Book appointment | 
+| DELETE | /appointments/:id | Cancel appointment |
 json
 {
-  "patientId": 1,
-  "doctorId": 1,
-  "date": "2026-01-20",
-  "time": "12:00"
+"patientId": 1,
+"doctorId": 1,
+"date": "2026-01-20",
+"time": "12:00"
 }
-
 
 ---
 
-*✅ Healthcheck*
+_✅ Healthcheck_
 
-*GET* `/health`
+_GET_ `/health`
 
-*Example response:*
+_Example response:_
 json
 {
 [2:16 PM, 12/22/2025] Microsoft Copilot: "status": "OK"
 }
-
 
 ---
 
 ## ⚙ Configuration
 
 | Variable | Description                      |
-|----------|----------------------------------|
+| -------- | -------------------------------- |
 | PORT     | Application port (default: 3000) |
 
 No environment variables are required.
@@ -216,16 +208,13 @@ You can test the API using:
 
 http://localhost:3000/patients
 
-
 ---
 
 ## 📄 Technical Notes
 
 Technical notes and challenges are documented in:
 
-
 docs/notes.md
-
 
 Includes:
 
