@@ -112,6 +112,7 @@ http://localhost:3000
 
 📡 API Endpoints
 Patients
+```md
 | Method | Endpoint   | Description        |
 |--------|-----------|--------------------|
 | GET    | /patients | Get all patients   |
@@ -127,6 +128,7 @@ Example request body:
 }
 
 Doctors
+```md
 | Method | Endpoint  | Description       |
 |--------|----------|-------------------|
 | GET    | /doctors | Get all doctors   |
@@ -140,6 +142,7 @@ Doctors
 }
 
 Appointments
+```md
 | Method | Endpoint   | Description        |
 |--------|-----------|--------------------|
 | GET    | /appointments | Get all appointments   |
@@ -166,6 +169,7 @@ GET /health
 }
 
 ⚙ Configuration
+```md
 | Variable | Description   | 
 |--------|-----------|
 | PORT    | Application port (default: 3000) |
