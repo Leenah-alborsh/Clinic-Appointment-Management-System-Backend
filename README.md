@@ -1,5 +1,4 @@
-[2:16 PM, 12/22/2025] Microsoft Copilot:
-markdown
+
 
 # 🏥 Clinic Appointment API
 
