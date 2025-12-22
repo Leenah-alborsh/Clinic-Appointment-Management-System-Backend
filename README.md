@@ -97,29 +97,37 @@ clinic-appointment-api/
 ## 🐳 Docker Setup
 
 **Build Docker Image**
+
 ```bash
-docker build -t clinic-api.
+docker build -t clinic-api .
 ```
+
 _Run Container_
+
 ```bash
 docker run -p 3000:3000 clinic-api
 ```
+
 _Run Using Docker Compose_
+
 ```bash
 docker compose up -d
 ```
+
 _Stop and Clean Up_
+
 ```bash
 docker compose down
 ```
+
 ---
 
 _🛠 Run Locally (Without Docker)_
 
 ```bash
 npm install
-```
 node src/app.js
+```
 
 The application will run on:
 
@@ -130,24 +138,26 @@ http://localhost:3000
 _📡 API Endpoints_
 
 ### Patients
- | Method | Endpoint | Description | 
- |--------|-----------|--------------------| 
- | GET | /patients | Get all patients | 
- | POST | /patients | Add a new patient |
+
+| Method | Endpoint  | Description       |
+| ------ | --------- | ----------------- |
+| GET    | /patients | Get all patients  |
+| POST   | /patients | Add a new patient |
 
 ```json
 {
 "name": "Leenah",
 "age": 22,
 "phone": "0591234567"
-}```
+}
 
 ---
 
 ### Doctors
- | Method | Endpoint | Description | 
- | ------ | -------- | --------------- | 
- | GET | /doctors | Get all doctors | 
+
+ | Method | Endpoint | Description |
+ | ------ | -------- | --------------- |
+ | GET | /doctors | Get all doctors |
  | POST | /doctors | Add a doctor |
 
 ```json
@@ -155,15 +165,15 @@ _📡 API Endpoints_
 "name": "Dr. Ahmad",
 "specialty": "Dentist",
 "phone": "0599876543"
-}```
+}
 
 ---
 
-### Appointments 
-| Method | Endpoint | Description | 
-|--------|---------------------|------------------------| 
-| GET | /appointments | Get all appointments | 
-| POST | /appointments | Book appointment | 
+### Appointments
+| Method | Endpoint | Description |
+|--------|---------------------|------------------------|
+| GET | /appointments | Get all appointments |
+| POST | /appointments | Book appointment |
 | DELETE | /appointments/:id | Cancel appointment |
 
 ```json
@@ -172,7 +182,7 @@ _📡 API Endpoints_
 "doctorId": 1,
 "date": "2026-01-20",
 "time": "12:00"
-}```
+}
 
 ---
 
@@ -185,7 +195,8 @@ _Example response:_
 {
  "status": "OK"
 }
-```
+````
+
 ---
 
 ## ⚙ Configuration
