@@ -289,3 +289,4 @@ This project was cloned and deployed from a Claw Cloud Devbox using GitHub integ
 ## 📜 License
 
 This project is licensed under the MIT License.
+Deployed from Claw Cloud Devbox using GitHub integration.
