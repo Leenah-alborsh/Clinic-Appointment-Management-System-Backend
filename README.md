@@ -282,6 +282,10 @@ Backend | Full-Stack Developer
 
 ---
 
+This project was cloned and deployed from a Claw Cloud Devbox using GitHub integration.
+
+---
+
 ## 📜 License
 
 This project is licensed under the MIT License.
