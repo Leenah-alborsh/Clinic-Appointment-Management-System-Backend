@@ -9,7 +9,6 @@ const path = require("path");
 // Serve static frontend
 app.use(express.static(path.join(__dirname, "public")));
 
-
 // Routes
 const patientsRoutes = require("./routes/patients.routes");
 const doctorsRoutes = require("./routes/doctors.routes");
@@ -31,6 +30,6 @@ app.get("/health", (req, res) => {
 
 // Server
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
 });

@@ -264,6 +264,23 @@ Includes:
 
 ---
 
+## Production Deployment (VPS)
+
+The application was deployed on a Virtual Private Server using Docker.
+Steps:
+1. Install Git and Docker on the VPS
+2. Clone the repository
+3. Build the Docker image
+4. Run the container
+
+---
+
+### Production URL
+```bash
+https://clinicapivps-8nhkjtay.b4a.run/
+```
+
+---
 ## 👩‍💻 Author
 
 **Leenah Alborsh**
