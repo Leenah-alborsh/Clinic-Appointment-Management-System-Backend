@@ -277,7 +277,7 @@ Steps:
 
 ### Production URL
 ```bash
-https://clinicapivps-8nhkjtay.b4a.run/
+https://clinicapivps-lp30lw2o.b4a.run/
 ```
 
 ---
