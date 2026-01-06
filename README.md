@@ -289,6 +289,14 @@ Backend | Full-Stack Developer
 
 ---
 
+📄 Deployment Experience & Notes
+
+Deployment challenges and solutions are documented in:
+```bash
+docs/notes.md
+```
+---
+
 ## 🔮 Future Improvements
 
 - Authentication (JWT)
